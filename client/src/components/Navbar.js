@@ -13,17 +13,27 @@ export const Navbar = () => {
     };
 
     return (
-        <div className="navbar">
-            <Link to="/">Home</Link>
-            <Link to="/create-recipe">Create Recipe</Link>
-            {!cookies.access_token ? (
-                <Link to="/auth">Login/Register</Link>
-            ) : (
-                <>
-                    <Link to="/saved-recipes">Saved Recipes</Link>
-                    <button onClick={() => logout()}>Logout</button>
-                </>
-            )}
-        </div>
+        <nav className="navbar navbar-expand navbar-light bg-light">
+            <Link className="navbar-brand" to="/">Home</Link>
+            <ul className="navbar-nav">
+                <li className="nav-item">
+                    <Link className="nav-link" to="/create-recipe">Create Recipe</Link>
+                </li>
+                {!cookies.access_token ? (
+                    <li className="nav-item">
+                        <Link className="nav-link" to="/auth">Login/Register</Link>
+                    </li>
+                ) : (
+                    <>
+                        <li className="nav-item">
+                            <Link className="nav-link" to="/saved-recipes">Saved Recipes</Link>
+                        </li>
+                        <li className="nav-item d-flex justify-content-center align-items-center">
+                            <button className="btn btn-danger" onClick={() => logout()}>Logout</button>
+                        </li>
+                    </>
+                )}
+            </ul>
+        </nav>
     );
 };

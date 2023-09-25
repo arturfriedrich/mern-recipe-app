@@ -5,6 +5,7 @@ import { Auth } from './pages/auth';
 import { CreateRecipe } from './pages/create-recipe';
 import { SavedRecipes } from './pages/saved-recipes';
 import { Navbar } from './components/Navbar';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 function App() {
   return (
