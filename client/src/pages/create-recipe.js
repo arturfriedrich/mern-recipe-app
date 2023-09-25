@@ -1,10 +1,10 @@
 import React, { useState } from "react";
 import axios from "axios";
-import { useGetUgerID } from "../hooks/useGetUserID";
+import { useGetUserID } from "../hooks/useGetUserID";
 import { useNavigate } from "react-router-dom";
 
 export const CreateRecipe = () => {
-    const userID = useGetUgerID();
+    const userID = useGetUserID();
 
     const [recipe, setRecipe] = useState({
         name: "",
