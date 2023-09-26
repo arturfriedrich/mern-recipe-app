@@ -5,7 +5,11 @@
 This is a simple recipe app built using the MERN stack. It allows users to create recipes
 and save them to their favourite one.
 
-The user can create an account and log in to the app. Once logged in, the user can create 
+The user can create an account and log in to the app. 
+
+
+
+Once logged in, the user can create 
 recipes and save them to their favourite ones.
 
 ## Installation
