@@ -23,22 +23,37 @@ export const SavedRecipes = () => {
 
     fetchSavedRecipes();
   }, []);
+  
   return (
-    <div className="saved-recipes-container">
-      <h1 className="saved-recipes-heading">Saved Recipes</h1>
+    <div className="home-container">
+      <h1 className="mt-4">Saved Recipes</h1>
       <ul className="list-unstyled">
         {savedRecipes.length === 0 ? (
           <p className="no-saved-recipes">No saved recipes! Go to the<Link className="link" to="/">browse page</Link>to explore new recepies!</p>
         ) : (
           savedRecipes.map((recipe) => (
-            <li key={recipe._id} className="recipe-item">
+            <li key={recipe._id} className="card mb-4">
+            <div className="card-body d-flex justify-content-between align-items-center">
               <div>
-                <h2>{recipe.name}</h2>
+                <h2 className="card-title">{recipe.name}</h2>
               </div>
-              <p>{recipe.description}</p>
-              <img src={recipe.imageUrl} alt={recipe.name} />
-              <p>Cooking Time: {recipe.cookingTime} minutes</p>
-            </li>
+            </div>
+            <div className="card-body">
+              <div className="instructions">
+                <p className="card-text">{recipe.instructions}</p>
+              </div>
+              <h5>Ingredients</h5>
+              {
+                recipe.ingredients.map((ingredient) => (
+                  <ul className="ingredient-list">
+                    <li className="card-text">{ingredient}</li>
+                  </ul>
+                ))
+              }
+              <p className="card-text">Cooking Time: {recipe.cookingTime} minutes</p>
+              <img src={recipe.imageUrl} alt={recipe.name} className="img-fluid" />
+            </div>
+          </li>
           ))
         )}
       </ul>
