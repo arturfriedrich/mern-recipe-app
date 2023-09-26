@@ -67,6 +67,10 @@ input {
   margin-bottom: 0;
 }
 
+.nav-item {
+  background-color: #F8F9FA;
+}
+
 a {
   color: white;
   text-decoration: none;
@@ -119,4 +123,14 @@ img {
 p {
   max-width: 400px;
   font-size: 12px;
+}
+
+.btn-primary {
+  background-color: #00A35C!important;
+  border-color: #00A35C!important;
+}
+
+.btn-primary:hover {
+  background-color: #14591D!important;
+  border-color: #14591D!important;
 }
