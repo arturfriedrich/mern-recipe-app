@@ -77,9 +77,11 @@ a {
   margin: 20px;
   width: 400px;
 }
+
 .create-recipe form {
   display: flex;
   flex-direction: column;
+  width: 100%;
 }
 ul {
   list-style: none;

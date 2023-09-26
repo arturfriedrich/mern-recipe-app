@@ -16,7 +16,7 @@ router.get("/", async (req, res) => {
 });
 
 // Create a new recipe
-router.post("/", verifyToken, async (req, res) => {
+router.post("/", async (req, res) => {
   const recipe = new RecipesModel({
     _id: new mongoose.Types.ObjectId(),
     name: req.body.name,
