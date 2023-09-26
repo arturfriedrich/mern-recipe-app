@@ -1,108 +1,25 @@
-import { useState } from "react";
-import axios from "axios";
-import { useCookies } from "react-cookie";
-import { useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
+import { Login } from "./login";
+import { Register } from "./register";
 
-export const Auth = () => {
+export const Auth = ({ mode }) => {
     return (
-        <div className="auth">
-            <Login />
-            <Register />
+        <div className="container mt-5">
+            <div className="row justify-content-center">
+                <div className="col-md-6">
+                    <div className="card">
+                        <div className="card-body">
+                            <h1 className="card-title text-center">{ mode === "login" ? <>Login</> : <>Register</> }</h1>
+                            { mode === "login" ? <Login /> : <Register /> }
+                            <div className="text-center mt-3">
+                            { mode === "login" ? <Link className="link" to="/register">You don't have an account? Make one.</Link> : <Link className="link" to="/auth">You already have an account? Log in.</Link> }
+                                
+                                
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-    )
-};
-
-const Login = () => {
-    const [username, setUsername] = useState("");
-    const [password, setPassword] = useState("");
-
-    const [_, setCookies] = useCookies(["access_token"]);
-
-    const navigate = useNavigate();
-
-    const onSubmit = async (event) => {
-        event.preventDefault();
-        try {
-            const response = await axios.post("http://localhost:4000/auth/login", {
-                username,
-                password
-            });
-            
-            setCookies("access_token", response.data.token);
-            window.localStorage.setItem("userID", response.data.userID);
-            navigate("/");
-
-        } catch(error) {
-            console.error(error)
-        }
-    };
-
-    return (
-        <Form 
-            username={username} 
-            setUsername={setUsername} 
-            password={password} 
-            setPassword={setPassword}
-            label="Login"
-            onSubmit={onSubmit}
-        />
-    )
-};
-
-const Register = () => {
-    const [username, setUsername] = useState("");
-    const [password, setPassword] = useState("");
-
-    const onSubmit = async (event) => {
-        event.preventDefault();
-        try {
-            await axios.post("http://localhost:4000/auth/register", {
-                username,
-                password
-            })
-            alert("User registered successfully");
-        } catch(error) {
-            console.error(error)
-        }
-    };
-
-    return (
-        <Form 
-            username={username} 
-            setUsername={setUsername} 
-            password={password} 
-            setPassword={setPassword} 
-            label="Register"
-            onSubmit={onSubmit}
-        />
-    )
-};
-
-const Form = ({ username, setUsername, password, setPassword, label, onSubmit }) => {
-    return (
-        <form onSubmit={onSubmit}>
-            <h1>{label}</h1>
-            <div className="form-group">
-                <label htmlFor="username">Username:</label>
-                <input 
-                    type="text" 
-                    id="username" 
-                    value={username}
-                    onChange={(event) =>  setUsername(event.target.value)}
-                />
-            </div>
-            <div className="form-group">
-                <label htmlFor="password">Password:</label>
-                <input 
-                    type="password" 
-                    id="password" 
-                    value={password}
-                    onChange={(event) => setPassword(event.target.value)}
-                />
-            </div>
-
-            <button type="submit">{label}</button>
-
-        </form>
-    )
+    );
 };
