@@ -20,19 +20,6 @@ body {
   background-color: #f2f2f2;
 }
 
-.auth-container {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  padding: 20px;
-  background-color: white;
-  border-radius: 5px;
-  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
-  margin: 20px;
-  width: 400px;
-}
-
 .form-group {
   display: flex;
   flex-direction: column;
@@ -136,11 +123,49 @@ p {
 }
 
 .link {
-  color: black;
+  font-size: 18px;
+  color: #00A35C;
   text-decoration: none;
-  font-size: 16px;
+  font-weight: bold;
 }
 
 .link:hover {
-  color: #00A35C;
+  color: #14591D;
+}
+
+/* Style the container */
+.saved-recipes-container {
+  padding: 20px;
+  text-align: center;
+  height: calc(100vh - 80px);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Style the heading */
+.saved-recipes-heading {
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+/* Style each recipe item */
+.recipe-item {
+  margin-bottom: 20px;
+  border: 1px solid #ccc;
+  padding: 10px;
+  background-color: #fff;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.recipe-item img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Style the "No saved recipes" message */
+.no-saved-recipes {
+  font-size: 18px;
+  color: #555;
 }

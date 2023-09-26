@@ -23,6 +23,6 @@ export const Auth = ({ mode }) => {
             </div>
           </div>
         </div>
-      </div>
+      </div>      
     );
   };
