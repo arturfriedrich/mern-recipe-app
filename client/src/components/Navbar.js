@@ -31,15 +31,15 @@ export const Navbar = () => {
 
             <div className="collapse navbar-collapse" id="navbarNav">
                 <ul className="navbar-nav">
-                    <li className="nav-item">
-                        <Link className="nav-link" to="/create-recipe">Create Recipe</Link>
-                    </li>
                     {!cookies.access_token ? (
                         <li className="nav-item">
                             <Link className="btn btn-primary" to="/auth">Login</Link>
                         </li>
                     ) : (
                         <>
+                            <li className="nav-item">
+                                <Link className="nav-link" to="/create-recipe">Create Recipe</Link>
+                            </li>
                             <li className="nav-item">
                                 <Link className="nav-link" to="/saved-recipes">Saved Recipes</Link>
                             </li>
