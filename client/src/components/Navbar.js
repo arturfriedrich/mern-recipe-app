@@ -16,7 +16,6 @@ export const Navbar = () => {
         <nav className="navbar navbar-expand-sm navbar-light bg-light">
             <Link className="navbar-brand" to="/">Home</Link>
 
-            {/* Hamburger Menu Toggle Button */}
             <button
                 className="navbar-toggler"
                 type="button"
@@ -33,7 +32,7 @@ export const Navbar = () => {
                 <ul className="navbar-nav">
                     {!cookies.access_token ? (
                         <li className="nav-item">
-                            <Link className="btn btn-primary" to="/auth">Login</Link>
+                            <Link className="btn btn-primary" to="/login">Login</Link>
                         </li>
                     ) : (
                         <>
