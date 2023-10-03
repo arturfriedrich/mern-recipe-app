@@ -9,6 +9,7 @@ export const Navbar = () => {
     const logout = () => {
         setCookies("access_token", "");
         window.localStorage.removeItem("userID");
+        window.localStorage.removeItem("username");
         navigate("/");
     };
 
@@ -47,7 +48,7 @@ export const Navbar = () => {
                                     className={`btn btn-danger ${!cookies.access_token ? 'd-none' : ''}`}
                                     onClick={() => logout()}
                                 >
-                                    Logout
+                                    Log out, {window.localStorage.getItem("userName")}
                                 </button>
                             </li>
                         </>
