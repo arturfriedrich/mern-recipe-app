@@ -65,3 +65,11 @@
     font-weight: bold;
     display: inline;
 }
+
+.login-link {
+    font-size: 16px;
+    color: #00A35C;
+    text-decoration: none;
+    font-weight: bold;
+    display: inline;
+}
