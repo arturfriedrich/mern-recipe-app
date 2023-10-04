@@ -8,6 +8,7 @@ import "../styles/login.css";
 export const Login = () => {
     const [username, setUsername] = useState("");
     const [password, setPassword] = useState("");
+    const [error, setError] = useState(""); // State for error message
 
     const [_, setCookies] = useCookies(["access_token"]);
     const navigate = useNavigate();
@@ -26,6 +27,7 @@ export const Login = () => {
             navigate("/");
         } catch (error) {
             console.error(error);
+            setError("Login failed. Please check your username and password."); // Set error message
         }
     };
 
@@ -59,6 +61,7 @@ export const Login = () => {
                     </div>
 
                     <button type="submit" className="login-btn">Log In</button>
+                    {error && <p className="error-message">{error}</p>} {/* Display error message */}
                 </form>
                 <p className="register-text">Don't have an account?<Link className="register-link" to="/register">Sign Up</Link></p>
             </div>
