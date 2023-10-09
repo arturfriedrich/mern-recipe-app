@@ -3,6 +3,8 @@ import axios from "axios";
 import { useGetUserID } from "../hooks/useGetUserID";
 import { useNavigate } from "react-router-dom";
 
+import "../styles/create-recipe.css";
+
 export const CreateRecipe = () => {
     const userID = useGetUserID();
 
@@ -75,7 +77,7 @@ export const CreateRecipe = () => {
             name="name"
             value={recipe.name}
             onChange={handleChange}
-            className="form-control"
+            className="form-input"
           />
         </div>
     
@@ -117,7 +119,7 @@ export const CreateRecipe = () => {
             name="instructions"
             value={recipe.instructions}
             onChange={handleChange}
-            className="form-control"
+            className="form-input"
           ></textarea>
         </div>
     
@@ -129,7 +131,7 @@ export const CreateRecipe = () => {
             name="imageUrl"
             value={recipe.imageUrl}
             onChange={handleChange}
-            className="form-control"
+            className="form-input"
           />
         </div>
     
@@ -141,11 +143,11 @@ export const CreateRecipe = () => {
             name="cookingTime"
             value={recipe.cookingTime}
             onChange={handleChange}
-            className="form-control"
+            className="form-input"
           />
         </div>
     
-        <button type="submit" className="btn btn-primary">
+        <button type="submit" className="btn btn-primary my-3">
           Create Recipe
         </button>
       </form>

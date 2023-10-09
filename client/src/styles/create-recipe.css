@@ -1,0 +1,22 @@
+label {
+    font-weight: bold;
+    font-size: 12px;
+    color: #303030;
+    margin-bottom: 5px;
+}
+
+.form-group {
+    display: flex;
+}
+
+.form-control {
+    border: none!important;
+    border-bottom: 1px solid #ccc!important;
+    margin-right: 10px;
+}
+
+.form-input {
+    width: 100%;
+    border: none;
+    border-bottom: 1px solid #ccc;
+}
