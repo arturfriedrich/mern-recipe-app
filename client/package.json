@@ -11,7 +11,7 @@
     "jquery": "^3.7.1",
     "react": "^18.2.0",
     "react-bootstrap": "^2.8.0",
-    "react-cookie": "^6.1.1",
+    "react-cookie": "^8.0.1",
     "react-dom": "^18.2.0",
     "react-router-dom": "^6.30.3",
     "react-scripts": "5.0.1",
